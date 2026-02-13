@@ -62,3 +62,8 @@ Now lets get the the fun part. The install of the Desk Clock Software:
 ```bash
 git clone https://github.com/jujubeenuk/METAR-RasPi.git
 ```
+
+Start the screen
+```bash
+DISPLAY=:0 python3 ~/METAR-RasPi/metar_raspi/screen.py
+```
