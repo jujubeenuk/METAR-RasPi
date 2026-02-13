@@ -128,3 +128,14 @@ Restart=never
 WantedBy=graphical.target
 cd /etc/systemd/system/
 ```
+
+Update the service permissions
+```bash
+sudo chmod 644 metar-screen.service
+```
+
+Next set ther service to run on boot:
+```bash
+sudo systemctl enable metar-screen.service
+```
+
