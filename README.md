@@ -77,3 +77,54 @@ Start the screen
 cd ~/METAR-RasPi
 DISPLAY=:0 PYTHONPATH=. python3 metar_raspi/screen.py
 ```
+
+Now if you would like this to start when your RaspberryPi starts we'll have to create a service for it.
+
+First navigate to where services are stored
+
+```bash
+cd /etc/systemd/system/
+```
+
+Now we're gonna create the new service:
+```bash
+sudo nano metar-screen.service
+```
+
+The service will contain the following:
+```bash
+[Unit]
+Description=METAR Display Service
+# Wait until after graphical enviroment is ready
+After=graphical.target
+Wants=graphical.target
+
+[Service]
+# Run the service as the user who owns the files (assumed 'pi')
+User=pi
+Group=pi
+
+# Set the working directory to the user's home directory
+# (since the METAR-RasPi folder is inside it)
+WorkingDirectory=/home/pi/
+
+# Set the PYTHONPATH environment variable using the full absolute path
+# This is required for your module imports to resolve correctly
+Environment=PYTHONPATH=/home/pi/METAR-RasPi
+
+# ----------------------------------------------------
+# ADD THESE LINES to set the DISPLAY environment for the GUI
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/pi/.Xauthority
+
+# The command to execute: python followed by the script's absolute path
+ExecStart=/usr/bin/python /home/pi/METAR-RasPi/metar_raspi/screen.py
+
+# Restart the service if it stops unexpectedly
+Restart=never
+
+[Install]
+# This target ensures the service starts when the graphical desktop boots
+WantedBy=graphical.target
+cd /etc/systemd/system/
+```
