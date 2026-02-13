@@ -60,5 +60,5 @@ python3 -m pip install shapely --break-system-packages
 
 Now lets get the the fun part. The install of the Desk Clock Software:
 ```bash
-git clone https://github.com/jujubeenuk/metar-deskclock.git
+git clone https://github.com/jujubeenuk/METAR-RasPi.git
 ```
