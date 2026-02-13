@@ -74,5 +74,6 @@ git clone https://github.com/jujubeenuk/METAR-RasPi.git
 
 Start the screen
 ```bash
-DISPLAY=:0 python3 ~/METAR-RasPi/metar_raspi/screen.py
+cd ~/METAR-RasPi
+DISPLAY=:0 PYTHONPATH=. python3 metar_raspi/screen.py
 ```
