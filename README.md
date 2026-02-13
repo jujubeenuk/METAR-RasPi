@@ -58,6 +58,15 @@ python3 -m pip install shapely --break-system-packages
 
 ```
 
+We'll also need hatch for this to work properly
+```bash
+sudo apt install pipx
+pipx ensurepath
+source ~/.bashrc
+
+
+
+
 Now lets get the the fun part. The install of the Desk Clock Software:
 ```bash
 git clone https://github.com/jujubeenuk/METAR-RasPi.git
