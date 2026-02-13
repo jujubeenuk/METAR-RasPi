@@ -1,4 +1,4 @@
-# METAR-Desk-Clock
+# METAR Desk Clock 
 
 Display ICAO METAR weather data with a Raspberry Pi. 
 
