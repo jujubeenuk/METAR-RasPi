@@ -63,7 +63,7 @@ We'll also need hatch for this to work properly
 sudo apt install pipx
 pipx ensurepath
 source ~/.bashrc
-
+```
 
 
 
