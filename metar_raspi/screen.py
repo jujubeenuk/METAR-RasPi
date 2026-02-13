@@ -850,7 +850,7 @@ class METARScreen:
             ("METAR-pi Desk Clock", "title", FONT_M2),
             ("J.D. Mohrmann", "name", FONT_S3),
             ("Based on code form Michael Dupont", "email", FONT_S3),
-            ("github.com/devdupont/METAR-RasPi", "url", FONT_S1),
+            ("https://github.com/jujubeenuk/METAR-RasPi", "url", FONT_S1),
             
         ):
             point = self.width // 2, getattr(self.layout.info, key + "_y")

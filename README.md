@@ -42,6 +42,14 @@ I started with a fresh install of raspbian "Debian GNU/Linux 13 (Trixie)" this c
 cat /etc/os-release
 ```
 
+My python version is 3.15.5. You can check yours using:
+
+```bash
+python3 --version
+```
+
+I point thse out in the event trouble shooting is needed in the future.
+
 Make sure your pi is fully updated
 
 ```bash
@@ -61,33 +69,34 @@ python3 -m pip install shapely --break-system-packages
 
 We'll also need hatch for this to work properly
 ```bash
-sudo apt install pipx
+sudo apt install pipx -y
 pipx ensurepath
 source ~/.bashrc
 ```
 
 
 
-Now lets get the the fun part. The install of the Desk Clock Software:
+Now lets get to the actual project. The install of the Desk Clock Software:
 ```bash
 git clone https://github.com/jujubeenuk/METAR-RasPi.git
 ```
 
-Start the screen
+This can be used to manually start the screen and test everything is working.
+
 ```bash
 cd ~/METAR-RasPi
 DISPLAY=:0 PYTHONPATH=. python3 metar_raspi/screen.py
 ```
 
-Now if you would like this to start when your RaspberryPi starts we'll have to create a service for it.
+Now if you would like this to start when your RaspberryPi starts since the plan is to use it as a desk clock, we'll have to create a service for it.
 
-First navigate to where services are stored
-
+I like to work in my directory structure so navigate to the services folder:
 ```bash
 cd /etc/systemd/system/
 ```
 
-Now we're gonna create the new service:
+Now it's time to create the new service:
+
 ```bash
 sudo nano metar-screen.service
 ```
@@ -130,16 +139,20 @@ WantedBy=graphical.target
 cd /etc/systemd/system/
 ```
 
-Update the service permissions
+Update the service permissions:
 ```bash
 sudo chmod 644 metar-screen.service
 ```
 
-Next set ther service to run on boot:
+Next set the service to run on boot:
 ```bash
 sudo systemctl enable metar-screen.service
 ```
 
 At this poinst you can reboot the RaspberryPi and enjoy your new desk clock.
+
+```bash
+sudo reboot
+```
 
 Thank you for taking the time to go throught this.
