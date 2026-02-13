@@ -13,6 +13,7 @@ This version runs the METAR program on a touchscreen display. I did not have a p
 - Raspberry Pi 5 (will work on any amount of PI 5 ram)
 - NVME HAT
 - NVME / POE+ HAT
+- This can be installed on an SD Card if you dont want the added expense of an NVME hat and drive.
 
 Tested displays:
 - 7 Inch Touchscreen IPS DSI Display Compatible with Raspberry Pi 5/4/3, 800x480 Pixel Capacitive Screen MIPI Driver-Free Interface (https://www.amazon.com/dp/B0D3QB7X4Z)
@@ -50,7 +51,7 @@ sudo apt update
 sudo apt full-upgrade -y
 ```
 
-This project uses the avwx-engine for connecting to the data source. Se we'll go ahead and install it. This will install AVWX globally not in a virtual enviroment. 
+This project uses the avwx-engine for connecting to the data source. Se we'll go ahead and install it. This will install AVWX globally not in a virtual enviroment. This will also install the latest version of avwx-engine as of this publish (2/13/26).
 
 ```bash
 python3 -m pip install git+https://github.com/avwx-rest/avwx-engine.git --break-system-packages
@@ -139,3 +140,6 @@ Next set ther service to run on boot:
 sudo systemctl enable metar-screen.service
 ```
 
+At this poinst you can reboot the RaspberryPi and enjoy your new desk clock.
+
+Thank you for taking the time to go throught this.
