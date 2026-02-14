@@ -4,19 +4,19 @@ build-backend = "hatchling.build"
 
 [project]
 name = "METAR-RasPi"
-version = "0.1.0"
+version = "1.0"
 description = "Display ICAO METAR weather data with a Raspberry Pi"
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
 keywords = ["aviation", "weather", "metar", "raspberry pi"]
 authors = [
-    { name = "Michael duPont", email = "michael@dupont.dev" },
+    { name = "J.D. Mohrmann", email = "jdmohrmann@gmail.com" },
 ]
 
 [project.urls]
-Issues = "https://github.com/devdupont/METAR-RasPi/issues"
-Source = "https://github.com/devdupont/METAR-RasPi"
+Issues = "https://github.com/jujubeenuk/METAR-RasPi/issues"
+Source = "https://github.com/jujubeenuk/METAR-RasPi"
 
 [tool.hatch.envs.screen]
 extra-dependencies = [
