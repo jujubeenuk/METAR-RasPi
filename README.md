@@ -2,7 +2,7 @@
 
 Display ICAO METAR weather data with a Raspberry Pi. 
 
-This is based on the original project from Michael duPont which can be found at https://github.com/devdupont/METAR-RasPi.
+This project began life found at https://github.com/devdupont/METAR-RasPi by Michael duPont. I struggled with getting it installed and to function with updates to raspbian, avwx, and python. As an avaition geek and hobbiest programmer I took it upon myself to update the project and create and step-by-step walkthough on getting it installed after I got the functionality back. 
 
 ## Screen
 
