@@ -6,14 +6,14 @@ This is based on the original project from Michael duPont which can be found at 
 
 ## Screen
 
-This version runs the METAR program on a touchscreen display. I did not have a plate availible to test and work with as the original project did so I have diabled the plate functions.
+This version runs the METAR program on a touchscreen display. I did not have a plate availible to test and work with as the original project did so I have diabled/removed the plate functions.
 
 ### Hardware I have used / tested 
 
-- Raspberry Pi 5 (will work on any amount of PI 5 ram)
+- Raspberry Pi 5 (will work on any amount of PI 5 ram) I don't see why this wouldn't work on any other RaspberryPi I just havent tested it.
 - NVME HAT
 - NVME / POE+ HAT
-- This can be installed on an SD Card if you dont want the added expense of an NVME hat and drive.
+- This can also be installed on an SD Card if you don't want the added expense of an NVME hat and drive. The NVME and hat are for longevity and testing on my part. 
 
 Tested displays:
 - 7 Inch Touchscreen IPS DSI Display Compatible with Raspberry Pi 5/4/3, 800x480 Pixel Capacitive Screen MIPI Driver-Free Interface (https://www.amazon.com/dp/B0D3QB7X4Z)
@@ -24,12 +24,13 @@ Tested displays:
 
 ### Program Config
 
-Common project settings are stored in `metar/config.py`. For the screen, the ones you may want to change are:
+Common project settings are stored in `metar_raspi/screen.py`. For the screen, the ones you may want to change are:
 
-- `layout`: Size of the screen. Loads the layout from `metar/screen_settings`
-- `shutdown_on_exit`: Set to `True` to shutdown the Pi when exiting the program
-- `clock_utc`: Clock displays UTC or local time. Not applicable to 320x240 size
-- `include_remarks`: Set to `True` to include the remarks section in scroll line
+- `layout`: Size of the screen. Loads the layout from `metar_raspi/settings` (Default: `800x480`)
+- `shutdown_on_exit`: Set to `True` to shutdown the Pi when exiting the program (Default: `false`)
+- `clock_utc`: Clock displays UTC or local time. Not applicable to 320x240 size (Default: `local`)
+- `include_remarks`: Set to `True` to include the remarks section in scroll line (Default: `true`)
+- The initial airport is set to KIPJ Lincolnton Regional just outside Charlotte NC
 
 
 ## Installing
