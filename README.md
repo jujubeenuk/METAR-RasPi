@@ -157,3 +157,19 @@ sudo reboot
 ```
 
 Thank you for taking the time to go throught this.
+
+## Functions
+
+When this starts it will check to see if an internet connection is present. It just pings the google 8.8.8.8 DNS servers to check. If connection is present via wired or wire less it will then boot into the full screen desk top display of the desk clock.
+
+If no connection is present it will close the program automatically. If you see this behavior then please check your internet connection and make sure it is online. Once connected run the command below from the terminal to launch the clock or just reboot if steps were followed for setting it to auto start.
+
+Manual Launch
+```bash
+cd ~/METAR-RasPi
+DISPLAY=:0 PYTHONPATH=. python3 metar_raspi/screen.py
+```
+
+The airport can be changed using the gear icon and the green up/down arrow. Just navigate to the ICO code for the airport you wish to view.
+
+The red circle closes out the program if you want to do things from the desktop. 
