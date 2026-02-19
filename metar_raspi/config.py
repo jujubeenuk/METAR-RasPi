@@ -3,8 +3,8 @@
 import logging
 from pathlib import Path
 
-# Seconds between server pings
-update_interval = 900
+# Seconds between server pings - default to 30 minutes
+update_interval = 1800
 
 # Seconds between connection retries
 timeout_interval = 60
