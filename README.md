@@ -20,13 +20,39 @@ Tested displays:
 
 - 5 Inch Touchscreen IPS MIPI DSI Display Compatible with Raspberry Pi 5/4/3, 800x480 Pixel Capacitive Screen Driver-Free Interface (https://www.amazon.com/dp/B0CXTFN8K9)
 
+- 52Pi 3.5 inch Touch Screen with case and Official Radiator for Raspberry Pi 5 (driver installed from https://github.com/goodtft/LCD-show) prior to moving on with these directions. I have discovered this by default sets the rotation to the power on the bottom edge of the case if you want to set it on edge. I recommend rotating the screen 180 degrees.
+
+#### How to rotate the display direction (ONLY FOR 3.5 INCH SCREEN)
+This method only applies to the Raspberry Pi series of display screens, other display screens do not apply.
+
+Method 1, If the driver is not installed, execute the following command (Raspberry Pi needs to connected to the Internet):
+```bash
+sudo rm -rf LCD-show
+git clone https://github.com/goodtft/LCD-show.git
+chmod -R 755 LCD-show
+cd LCD-show/
+sudo ./XXX-show 180
+```
+
+After execution, the driver will be installed. The system will automatically restart, and the display screen will rotate 180 degrees to display and touch normally.
+( ' XXX-show ' can be changed to the corresponding driver, and ' 180 ' can be changed to 0, 90, 180 and 270, respectively representing rotation angles of 0 degrees, 90 degrees, 180 degrees, 270 degrees)
+
+Method 2, If the driver is already installed, execute the following command:
+```bash
+cd LCD-show/
+sudo ./rotate.sh 180
+```
+
+After execution, the system will automatically restart, and the display screen will rotate 180 degrees to display and touch normally.
+( ' 180 ' can be changed to 0, 90, 180 and 270, respectively representing rotation angles of 0 degrees, 90 degrees, 180 degrees, 270 degrees)
+(If the rotate.sh prompt cannot be found, use Method 1 to install the latest drivers)
 
 
 ### Program Config
 
 Common project settings are stored in `metar_raspi/screen.py`. For the screen, the ones you may want to change are:
 
-- `layout`: Size of the screen. Loads the layout from `metar_raspi/settings` (Default: `800x480`)
+- `layout`: Size of the screen. Loads the layout from `metar_raspi/settings` (Default: `800x480`) The 5 and 7 inch screen above are in this resolution. the 3.5 inch screen above needs this changed to `480x320`
 - `shutdown_on_exit`: Set to `True` to shutdown the Pi when exiting the program (Default: `false`)
 - `clock_utc`: Clock displays UTC or local time. Not applicable to 320x240 size (Default: `local`)
 - `include_remarks`: Set to `True` to include the remarks section in scroll line (Default: `true`)
