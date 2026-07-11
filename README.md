@@ -94,13 +94,17 @@ python3 -m pip install shapely --break-system-packages
 
 ```
 
-We'll also need hatch for this to work properly
+We'll also need pipx globally for this to work properly
 ```bash
 sudo apt install pipx -y
-pipx ensurepath
+sudo pipx ensurepath --global
 source ~/.bashrc
 ```
-
+Add Hatch as well also globally
+```bash
+sudo pipx install hatch --global
+sudo pipx ensurepath --global
+```
 
 
 Now lets get to the actual project. The install of the Desk Clock Software:
