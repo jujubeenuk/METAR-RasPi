@@ -91,16 +91,12 @@ python3 -m pip install shapely --break-system-packages
 
 ```
 
-We'll also need pipx globally for this to work properly
+We'll also need pipxand hatch globally for this to work properly
 ```bash
 sudo apt install pipx -y
-sudo pipx ensurepath --global
-source ~/.bashrc
-```
-Add Hatch as well also globally
-```bash
 sudo pipx install hatch --global
 sudo pipx ensurepath --global
+source ~/.bashrc
 ```
 
 
