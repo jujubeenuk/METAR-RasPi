@@ -48,7 +48,7 @@ After execution, the system will automatically restart, and the display screen w
 (If the rotate.sh prompt cannot be found, use Method 1 to install the latest drivers)
 
 
-### Program Config
+## Program Config
 
 Common project settings are stored in `metar_raspi/screen.py`. For the screen, the ones you may want to change are:
 
