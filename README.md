@@ -80,10 +80,7 @@ I point thse out in the event trouble shooting is needed in the future.
 Make sure your pi is fully updated
 
 ```bash
-sudo apt update
-```
-```bash
-sudo apt full-upgrade -y
+sudo apt update && sudo apt full-upgrade -y
 ```
 
 This project uses the avwx-engine for connecting to the data source. Se we'll go ahead and install it. This will install AVWX globally not in a virtual enviroment. This will also install the latest version of avwx-engine as of this publish (2/13/26).
