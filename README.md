@@ -61,7 +61,7 @@ Common project settings are stored in `metar_raspi/screen.py`. For the screen, t
 
 ## Installing
 
-Phase 1: Installing the python script
+###Phase 1: Installing the python script
 
 My preference is to do the install though an SSH terminal. I used the standard windows terminal for my install.
 
@@ -115,7 +115,7 @@ DISPLAY=:0 PYTHONPATH=. python3 metar_raspi/screen.py
 ```
 Now you can use ctrl+c to close: keep in mind this will stop the running project
 
-Phase 2: Launching the python script:
+###Phase 2: Launching the python script:
 
 If everything is working lets create a desktop icon to launch this in the event it fails to start:
 
@@ -137,8 +137,9 @@ Set the permissions to be executable
 ```bash
 chmod +x /home/pi/Desktop/Start_Metar.desktop
 ```
+At this point the script can be run from the desktop. 
 
-Phase 3: Autostarting when booting the raspberrypi (Currently not working again - working to repair)
+###Phase 3: Autostarting when booting the raspberrypi (Currently not working again - working to repair)
 
 Now if you would like this to start when your RaspberryPi starts since the plan is to use it as a desk clock, we'll have to create a service for it.
 
@@ -207,19 +208,20 @@ At this poinst you can reboot the RaspberryPi and enjoy your new desk clock.
 sudo reboot
 ```
 
-Thank you for taking the time to go throught this.
-
-## Functions
-
 When this starts it will check to see if an internet connection is present. It just pings the google 8.8.8.8 DNS servers to check. If connection is present via wired or wire less it will then boot into the full screen desk top display of the desk clock.
 
 If no connection is present it will close the program automatically. If you see this behavior then please check your internet connection and make sure it is online. Once connected run the command below from the terminal to launch the clock or just reboot if steps were followed for setting it to auto start.
 
-Manual Launch
+##Functions
+
+Manual Launch from the command line:
 ```bash
 cd ~/METAR-RasPi
 DISPLAY=:0 PYTHONPATH=. python3 metar_raspi/screen.py
 ```
+Starting from the icon on the desktop just requires double clicking it to launch
+
+The automatic start function is not working with the most recent (7/12/26) raspbian install. I'm working to resove this issue.
 
 The airport can be changed using the gear icon and the green up/down arrow. Just navigate to the ICO code for the airport you wish to view.
 
