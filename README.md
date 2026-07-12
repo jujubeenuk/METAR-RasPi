@@ -61,6 +61,8 @@ Common project settings are stored in `metar_raspi/screen.py`. For the screen, t
 
 ## Installing
 
+Phase 1: Installing the python script
+
 My preference is to do the install though an SSH terminal. I used the standard windows terminal for my install.
 
 I started with a fresh install of raspbian "Debian GNU/Linux 13 (Trixie)" this can be checked my running
@@ -111,6 +113,32 @@ This can be used to manually start the screen and test everything is working.
 cd ~/METAR-RasPi
 DISPLAY=:0 PYTHONPATH=. python3 metar_raspi/screen.py
 ```
+Now you can use ctrl+c to close: keep in mind this will stop the running project
+
+Phase 2: Launching the python script:
+
+If everything is working lets create a desktop icon to launch this in the event it fails to start:
+
+This will create the icon
+```bash
+nano /home/pi/Desktop/Start_Metar.desktop
+```
+Here are the file contents
+```bash
+[Desktop Entry]
+Type=Application
+Name=Start METAR Clock
+Comment=Launches METAR screen directly
+Exec=bash -c "cd /home/pi/METAR-RasPi && DISPLAY=:0 PYTHONPATH=. python3 metar_raspi/screen.py"
+Terminal=false
+Categories=Utility;
+```
+Set the permissions to be executable
+```bash
+chmod +x /home/pi/Desktop/Start_Metar.desktop
+```
+
+Phase 3: Autostarting when booting the raspberrypi (Currently not working again - working to repair)
 
 Now if you would like this to start when your RaspberryPi starts since the plan is to use it as a desk clock, we'll have to create a service for it.
 
